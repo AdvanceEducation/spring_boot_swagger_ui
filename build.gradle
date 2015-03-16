@@ -17,7 +17,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'war'
 
 jar {
-    baseName = 'user-api'
+    baseName = 'spring_boot_swagger_ui'
 }
 
 repositories {
