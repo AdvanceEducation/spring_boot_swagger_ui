@@ -17,8 +17,10 @@
 package org.advanced.swaggerui.config;
 
 import org.advanced.swaggerui.Application;
+import org.advanced.swaggerui.filter.ApiOriginFilter;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 
 public class WebInitializer extends SpringBootServletInitializer {
 
@@ -26,5 +28,7 @@ public class WebInitializer extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}
+
+
 
 }
