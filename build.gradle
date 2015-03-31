@@ -14,13 +14,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'war'
 
-jar {
-    baseName = 'spring_boot_swagger_ui'
-}
-jar.into('/') {
-    from('src/main/webapp')
-}
 
 repositories {
     maven { url "http://repo.spring.io/libs-staging-local" }
