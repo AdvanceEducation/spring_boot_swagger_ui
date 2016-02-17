@@ -55,17 +55,17 @@
         sorter : "alpha"
       });
 
-      function addApiKeyAuthorization() {
-        var key = $('#input_apiKey')[0].value;
-        log("key: " + key);
-        if(key && key.trim() != "") {
-            log("added key " + key);
-            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "query"));
+      function addAuthorizationToken() {
+        var token = $('#input_authToken')[0].value;
+        log("Token: " + token);
+        if(token && token.trim() != "") {
+            log("Added auth token: " + token);
+            window.authorizations.add("Authorization", new ApiKeyAuthorization("Authorization", token, "header"));
         }
       }
 
-      $('#input_apiKey').change(function() {
-        addApiKeyAuthorization();
+      $('#input_authToken').change(function() {
+        addAuthorizationToken();
       });
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
@@ -86,7 +86,8 @@
     <a id="logo" href="http://swagger.io">swagger</a>
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+      <!-- We will use this field to add authorization token which is necessary for accessing secured APIs -->
+      <div class='input'><input placeholder="Auth token" id="input_authToken" name="authToken" type="text"/></div>
       <div class='input'><a id="explore" href="#">Explore</a></div>
     </form>
   </div>
